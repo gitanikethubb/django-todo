@@ -22,7 +22,7 @@ jobs:
           id: build-docker-image
           run: |
             ls -la 
-            docker build . -f Dockerfile -t aniketmaster/demo-image-test:latest
+            docker build /home/aniketji/githubaction/django-todo -f Dockerfile -t aniketmaster/demo-image-test:latest
         - name: push the docker image
           id: push-docker-image
           run: docker push ${{secrets.DOCKERHUB_USERNAME}}/demo-image-test:latest
